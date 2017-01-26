@@ -75,50 +75,8 @@ namespace PrimeNumberSieve
         }
         static void Main(string[] args)
         {
+            //calls the Prime function
             Prime();
-
-            /*
-            //get the lower bound
-            Console.WriteLine("Enter the Lower Bound Number: ");
-
-            int lowerBound = int.Parse(Console.ReadLine());
-
-            //get the upper bound
-            Console.WriteLine("Enter Upper Bound Number: ");
-
-            int upperBound = int.Parse(Console.ReadLine());
-            
-            //initializes an array with the size of the amount of numbers between the lower and upper bound
-            Boolean[] boolArray = new Boolean[(upperBound - lowerBound)];
-            
-
-            //set all boolean values to true
-            for (int i = 0; i < boolArray.Length - 1; i++)
-            {
-                boolArray[i] = true;
-            }
-
-            for(int i = lowerBound; i < Math.Sqrt(upperBound); i++)
-            {
-
-                int boolCount = 0;
-                if(boolArray[boolCount] == true)
-                {
-                    int count = 1;
-                    for(int j = i * i; j < upperBound; j = (i*i) + (count*i))
-                    {
-                        //boolArray[j] = false;
-                        Console.WriteLine(j);
-                        count += 1;
-                        
-                    }
-                }
-                boolCount += 1;
-            }
-
-            
-                 
-    */
         }
     }
 }

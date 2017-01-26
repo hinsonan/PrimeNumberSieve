@@ -1,1 +1,6 @@
 D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\bin\Debug\PrimeNumberSieve.exe.config
+D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\bin\Debug\PrimeNumberSieve.exe
+D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\bin\Debug\PrimeNumberSieve.pdb
+D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\obj\Debug\PrimeNumberSieve.csprojResolveAssemblyReference.cache
+D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\obj\Debug\PrimeNumberSieve.exe
+D:\AppDev2\PrimeNumberSieve\PrimeNumberSieve\PrimeNumberSieve\obj\Debug\PrimeNumberSieve.pdb
