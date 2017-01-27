@@ -9,27 +9,17 @@ namespace PrimeNumberSieve
 
     class Program
     {
-        public static void Prime()
+        public static void Prime(int min, int max)
         {
+            //this count will be used in the algorithm later
             int count = 1;
-            //get the lower bound
-            Console.WriteLine("Enter the Lower Bound Number: ");
+            //initialize varibles needed           
 
-            //validate that the user put in an int
-            int lowerBound = int.Parse(Console.ReadLine());
-
-            //get the upper bound
-            Console.WriteLine("Enter Upper Bound Number: ");
-
-            int upperBound = int.Parse(Console.ReadLine());
-
-            //initializes an array with the size of the amount of numbers between the lower and upper bound
+            //initializes a LinkedList to hold the values of all the number
             LinkedList<int> list = new LinkedList<int>();
 
-
-
             //put all numbers in range into a list
-            for (int i = 2; i < upperBound; i++)
+            for (int i = 2; i < max; i++)
             {
                 if (i == 2)
                 {
@@ -43,15 +33,13 @@ namespace PrimeNumberSieve
             }
 
             //does not exceed the sqrt of the upper bound
-            for (int i = 2; i < Math.Sqrt(upperBound); i++)
+            for (int i = 2; i < Math.Sqrt(max); i++)
             {
-                for (int j = i * i; j < upperBound; j = (i * i) + (count * i))
+                for (int j = i * i; j < max; j = (i * i) + (count * i))
                 {
-                    //Console.WriteLine("this number is being deleted " + j);
-
                     list.Remove(j);
 
-                    //makes the count go up to follow the algorithm i^2 + 2i etc...
+                    //makes the count go up to follow the algorithm i^2 + 2i etc... except on the first iteration
                     if (j != 4)
                     {
                         count += 1;
@@ -62,9 +50,10 @@ namespace PrimeNumberSieve
 
 
             }
+            //print out the prime numbers in the list
             foreach (int element in list)
             {
-                if (element > lowerBound)
+                if (element > min)
                 {
                     Console.WriteLine(element);
                 }
@@ -75,8 +64,43 @@ namespace PrimeNumberSieve
         }
         static void Main(string[] args)
         {
+            int min;
+            int max;
+            string response;
+
+            //get the min value and validate input
+            do
+            {
+                Console.Write("Enter min: ");
+                response = Console.ReadLine();
+
+            }
+            while (!int.TryParse(response, out min));
+
+
+
+
+            //get the max and validate input
+            do
+            {
+                Console.Write("Enter max: ");
+                response = Console.ReadLine();
+
+            }
+            while (!int.TryParse(response, out max));
+
+            //check if max is bigger than min
+            if (min > max)
+            {
+                Console.Write("The min value is higher than the max please restart the program");
+                return;
+
+            }
             //calls the Prime function
-            Prime();
+            Prime(min, max);
+
+            //closes the program at keystroke
+            Console.ReadLine();
         }
     }
 }
